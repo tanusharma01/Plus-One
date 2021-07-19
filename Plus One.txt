@@ -1,0 +1,27 @@
+class Solution {
+
+public int[] plusOne(int[] arr) {
+
+    int carry = 1;
+    
+    for(int i = arr.length - 1; i >= 0; i--){
+        if(arr[i] + carry > 9){
+            
+            if(i == 0){
+                arr[i] = 0;
+                int[] arr2 = new int[arr.length + 1];
+                arr2[0] = 1;
+                System.arraycopy(arr, 0, arr2, 1, arr2.length - 1);
+                return arr2;
+            }
+            
+            arr[i] = 0;
+            
+        }else{
+            arr[i] = arr[i] + 1;
+            return arr;
+        }
+    }
+    return arr;
+}
+}
